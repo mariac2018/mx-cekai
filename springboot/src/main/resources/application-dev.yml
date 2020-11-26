@@ -1,0 +1,52 @@
+spring:
+  profiles: devvvv
+
+#主配置文件
+server:
+  port: 8080
+  servlet:
+    context-path: /examples
+
+#自定义配置文件
+xixi:
+  haha: 'xiaobizai'
+
+list:
+  - 'l1:1111'
+  - 'l2:2222'
+  - 'l3:3333'
+
+map:
+  k1: 123
+  K2: 456
+
+pay-info:
+  orderId: '123456'
+  payId: '123'
+
+---
+spring:
+  profiles: dev
+
+#主配置文件
+server:
+  port: 8080
+  servlet:
+    context-path: /examples
+
+#自定义配置文件
+xixi:
+  haha: 'xiaomige'
+
+list:
+  - 'l1:1111'
+  - 'l2:2222'
+  - 'l3:3333'
+
+map:
+  k1: 123
+  K2: 456
+
+pay-info:
+  orderId: '123456'
+  payId: '123'

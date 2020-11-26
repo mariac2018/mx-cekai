@@ -1,0 +1,22 @@
+#主配置文件
+server:
+  port: 8080
+  servlet:
+    context-path: /examples
+
+#自定义配置文件
+xixi:
+  haha: 'xiaomige'
+
+pay-info:
+  orderId: '123456'
+  payId: '123'
+
+spring:
+  profiles: jdbc
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/course
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+

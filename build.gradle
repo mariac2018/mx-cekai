@@ -1,0 +1,51 @@
+allprojects {
+    group 'mx-cekai'
+    version '1.0-SNAPSHO'
+    buildDir = 'target'
+
+    apply plugin: 'idea'
+    apply plugin: 'maven'
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    repositories {
+        //本地
+        mavenLocal()
+        //镜像
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        //中心仓库
+        mavenCentral()
+    }
+
+    idea {
+        module {
+            downloadSources = true
+            downloadJavadoc = false
+            sourceDirs += file('src/main/resources')
+        }
+    }
+
+    configurations {
+
+    }
+
+    dependencies {
+        // https://mvnrepository.com/artifact/com.google.guava/guava
+        implementation("com.google.guava:guava:29.0-jre")
+        implementation("org.apache.commons:commons-lang3:3.10")
+        implementation('com.google.code.gson:gson:2.8.6')
+        //implementation('org.assertj:assertj-core:3.16.1')
+        implementation('org.junit.jupiter:junit-jupiter-api:5.6.2')
+        implementation('ch.qos.logback:logback-classic:1.2.3')
+        implementation('ch.qos.logback:logback-core:1.2.3')
+        implementation('commons-io:commons-io:2.7')
+        implementation('cn.hutool:hutool-all:5.4.0')
+        compile('mysql:mysql-connector-java:8.0.20')
+        compile('org.projectlombok:lombok:1.18.6')
+    }
+}

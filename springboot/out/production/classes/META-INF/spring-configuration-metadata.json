@@ -1,0 +1,42 @@
+{
+  "groups": [
+    {
+      "name": "db",
+      "type": "course.springboot.bean.DbConfigInfo",
+      "sourceType": "course.springboot.bean.DbConfigInfo"
+    },
+    {
+      "name": "pay-info",
+      "type": "course.springboot.bean.PayInfo",
+      "sourceType": "course.springboot.bean.PayInfo"
+    }
+  ],
+  "properties": [
+    {
+      "name": "db.password",
+      "type": "java.lang.String",
+      "sourceType": "course.springboot.bean.DbConfigInfo"
+    },
+    {
+      "name": "db.url",
+      "type": "java.lang.String",
+      "sourceType": "course.springboot.bean.DbConfigInfo"
+    },
+    {
+      "name": "db.user-name",
+      "type": "java.lang.String",
+      "sourceType": "course.springboot.bean.DbConfigInfo"
+    },
+    {
+      "name": "pay-info.order-id",
+      "type": "java.lang.String",
+      "sourceType": "course.springboot.bean.PayInfo"
+    },
+    {
+      "name": "pay-info.pay-id",
+      "type": "java.lang.String",
+      "sourceType": "course.springboot.bean.PayInfo"
+    }
+  ],
+  "hints": []
+}

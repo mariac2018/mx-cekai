@@ -1,0 +1,48 @@
+buildDir = 'target'
+//添加插件
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+buildscript{
+    ext {
+        springBootVersion = '2.2.2.RELEASE'
+    }
+    repositories {
+        maven {
+            url 'https://plugins.gradle.org/m2/'
+        }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+sourceSets.main.resources {
+    if (project.hasProperty('profile')) {
+        srcDir 'src/main/resources-' + project.profile
+        srcDir 'src/test/resources-' + project.profile
+    } else {
+        srcDir 'src/main/resources-test'
+        srcDir 'src/test/resources-test'
+    }
+}
+
+clean.doLast {
+    delete projectDir.path + '/target'
+}
+
+configurations {
+}
+
+dependencies {
+    implementation('org.springframework.boot:spring-boot-starter-web')
+    implementation('org.springframework.boot:spring-boot-configuration-processor')
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    //单测依赖
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+
+    //JDBC
+    implementation('mysql:mysql-connector-java:8.0.20')
+    implementation('org.springframework.boot:spring-boot-starter-jdbc')
+}

@@ -1,0 +1,8 @@
+rootProject.name = 'cekai'
+include 'practice'
+include 'homework'
+include 'homework'
+include 'patterns'
+include 'spring'
+include 'springboot'
+
